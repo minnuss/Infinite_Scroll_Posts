@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: 'Poppins', sans-serif; // 'Montserrat', 'Roboto';
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: #296ca8;
+  color: #fff;
+  padding-bottom: 100px;
+
+  h1 {
+    font-size: 3rem;
+    margin: 30px;
+    text-align: center;
+  }
+
+  .filter-container {
+    margin-top: 20px;
+    width: 80vw;
+    max-width: 800px;
+
+    .filter {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.6rem;
+    }
+  }
+
+  .post-container {
+    .post {
+      position: relative;
+      background-color: #4992d3;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+      padding: 20px;
+      margin: 40px 0;
+
+      display: flex;
+      width: 80vw;
+      max-width: 800px;
+      font-size: 1.6rem;
+
+      .number {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        font-size: 15px;
+        background: #fff;
+        color: #296ca8;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 7px 10px;
+
+        display: grid;
+        place-content: center;
+      }
+
+      .post-info {
+        margin-left: 20px;
+
+        h2 {
+          font-size: 2rem;
+          margin: 15px 0;
+        }
+
+        .post-body {
+          margin: 15px 0 0;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+
+  .loader {
+    opacity: 0;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    transition: opacity 0.3s ease-in;
+
+    &.show {
+      opacity: 1;
+    }
+
+    .circle {
+      background-color: #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 5px;
+      animation: bounce 0.5s ease-in infinite;
+
+      &:nth-of-type(2) {
+        animation-delay: 0.1s;
+      }
+
+      &:nth-of-type(3) {
+        animation-delay: 0.2s;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
